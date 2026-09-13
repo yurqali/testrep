@@ -1,0 +1,859 @@
+/* Shared a11y + template variants. Palette stays Fiery Fox. */
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -40px;
+  z-index: 300;
+  padding: 8px 14px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.zapis-note {
+  margin: 0 0 18px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+html:not(.js) .masters-nav,
+html:not(.js) .team-prev,
+html:not(.js) .team-next,
+html:not(.js) .gallery-nav {
+  display: none;
+}
+
+html:not(.js) .masters-viewport,
+html:not(.js) .gallery-viewport {
+  overflow-x: auto;
+}
+
+html:not(.js) .masters-track,
+html:not(.js) .gallery-track {
+  width: max-content;
+}
+
+html:not(.js) .master-card {
+  flex: 0 0 200px;
+}
+
+@media (max-width: 1080px) {
+  html:not(.js) .mobile-menu {
+    position: static;
+    transform: none;
+    height: auto;
+    padding: 8px var(--pad) 16px;
+    overflow: visible;
+  }
+
+  html:not(.js) .mobile-menu-top,
+  html:not(.js) .mobile-close {
+    display: none;
+  }
+
+  html:not(.js) .mobile-menu a.big {
+    font-size: 1rem;
+    padding: 8px 0;
+  }
+}
+
+@media (min-width: 1081px) {
+  html:not(.js) .mobile-menu {
+    display: none;
+  }
+
+  html:not(.js) body.t-menu .mobile-menu {
+    display: flex;
+    position: static;
+    transform: none;
+    height: auto;
+    padding: 8px var(--pad) 16px;
+  }
+
+  html:not(.js) body.t-menu .mobile-menu-top,
+  html:not(.js) body.t-menu .mobile-close {
+    display: none;
+  }
+}
+
+.float-zapis {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  box-shadow: var(--shadow);
+}
+
+.bottom-bar {
+  display: none;
+}
+
+.side-dots {
+  display: none;
+}
+
+.service-tile {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ----- overlay hero + glass header ----- */
+body.t-overlay header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+body.t-overlay header.is-solid {
+  position: sticky;
+  background: rgba(246, 241, 234, 0.92);
+  border-bottom-color: var(--line);
+  backdrop-filter: blur(14px);
+}
+
+body.t-overlay .hero {
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+  position: relative;
+}
+
+body.t-overlay .hero-visual {
+  position: absolute;
+  inset: 0;
+  height: auto;
+}
+
+body.t-overlay .hero-visual img {
+  height: 100%;
+}
+
+body.t-overlay .hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(246, 241, 234, 0.92) 0%, rgba(246, 241, 234, 0.45) 48%, rgba(246, 241, 234, 0.12) 100%);
+}
+
+body.t-overlay .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 38rem;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+}
+
+body.t-overlay .hero-swatches {
+  left: 24px;
+}
+
+@media (max-width: 1080px) {
+  body.t-overlay .hero-visual {
+    position: absolute;
+  }
+
+  body.t-overlay .hero-content {
+    padding-top: 6rem;
+  }
+}
+
+/* ----- stacked hero ----- */
+body.t-stack .hero {
+  grid-template-columns: 1fr;
+  min-height: auto;
+}
+
+body.t-stack .hero-visual {
+  height: min(70vh, 640px);
+  min-height: 280px;
+  order: -1;
+}
+
+body.t-stack .hero-content {
+  max-width: none;
+  padding-top: 40px;
+}
+
+/* ----- photo first in split (left on wide) ----- */
+body.t-photo-left .hero {
+  grid-template-columns: 0.95fr 1.05fr;
+}
+
+body.t-photo-left .hero-visual {
+  order: -1;
+}
+
+body.t-photo-left header {
+  position: relative;
+}
+
+/* ----- burger-only header ----- */
+body.t-menu nav.main-nav,
+body.t-menu .head-phone,
+body.t-menu .head-actions .btn {
+  display: none;
+}
+
+body.t-menu .burger {
+  display: flex;
+}
+
+/* ----- compact header ----- */
+body.t-snap header .logo-text small {
+  display: none;
+}
+
+body.t-snap header .logo-img {
+  height: 48px;
+}
+
+body.t-snap .nav-wrap {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+body.t-snap {
+  scroll-snap-type: y proximity;
+}
+
+body.t-snap .hero,
+body.t-snap .about,
+body.t-snap .services,
+body.t-snap .masters,
+body.t-snap .gallery,
+body.t-snap .contacts {
+  scroll-snap-align: start;
+}
+
+/* ----- sticky titles ----- */
+body.t-photo-left .about-content h2,
+body.t-photo-left .services-head,
+body.t-photo-left .masters-head,
+body.t-photo-left .gallery-head,
+body.t-photo-left .contact-info h2 {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  background: var(--bg);
+  padding: 10px 0;
+}
+
+body.t-photo-left .masters-head {
+  background: var(--bg-soft);
+}
+
+/* ----- masters grid ----- */
+.masters-grid-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.masters-grid-list .master-card {
+  flex: none;
+}
+
+/* ----- native horizontal strip ----- */
+.masters-hscroll {
+  overflow-x: auto;
+  display: flex;
+  gap: 22px;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+}
+
+.masters-hscroll .master-card {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+}
+
+/* ----- services as list ----- */
+.service-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+
+.service-list li {
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-list h3 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+
+.service-list p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+/* ----- gallery carousel ----- */
+.gallery-carousel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.gallery-viewport {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 14px;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-track .gitem {
+  flex: 0 0 var(--card-w, 70%);
+  height: 280px;
+}
+
+html:not(.js) .gallery-track .gitem {
+  flex: 0 0 280px;
+}
+
+/* ----- reveal ----- */
+@media (prefers-reduced-motion: no-preference) {
+  html.js body.t-reveal .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  html.js body.t-reveal .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ----- bottom bar ----- */
+body.t-bottom {
+  padding-bottom: 76px;
+}
+
+body.t-bottom .bottom-bar {
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 70;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  justify-content: space-around;
+  align-items: center;
+  padding: 8px 8px calc(8px + env(safe-area-inset-bottom, 0px));
+}
+
+body.t-bottom .bottom-bar a {
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding: 8px 6px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+body.t-bottom .bottom-bar a.btn {
+  color: var(--accent-ink);
+  padding: 8px 14px;
+}
+
+body.t-bottom header .head-actions .btn {
+  display: none;
+}
+
+/* ----- side dots ----- */
+body.t-photo-left .side-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+}
+
+body.t-photo-left .side-dots a {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+  overflow: hidden;
+  text-indent: -999px;
+}
+
+body.t-photo-left .side-dots a:hover,
+body.t-photo-left .side-dots a:focus-visible {
+  background: var(--accent);
+}
+
+@media (max-width: 640px) {
+  body.t-photo-left .side-dots {
+    display: none;
+  }
+
+  .float-zapis {
+    bottom: 16px;
+    right: 12px;
+  }
+}
+
+/* ----- rail: вертикальная панель, раскрывающиеся блоки, проход вбок ----- */
+body.t-rail {
+  --rail-w: 272px;
+}
+
+body.t-rail header.rail {
+  position: static;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px var(--pad) 20px;
+  background: var(--bg-soft);
+  backdrop-filter: none;
+  border-bottom: 1px solid var(--line);
+}
+
+body.t-rail .rail-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+body.t-rail .rail-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+body.t-rail .rail-nav i {
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+body.t-rail .rail-nav a[aria-current="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+body.t-rail .rail-nav a[aria-current="true"] i {
+  color: var(--accent);
+}
+
+body.t-rail .rail-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+body.t-rail .rail-foot .head-phone {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* первый экран без фото: только буквы */
+body.t-rail .hero-type {
+  grid-template-columns: 1fr;
+  min-height: auto;
+}
+
+body.t-rail .hero-type .hero-content {
+  max-width: 48rem;
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+}
+
+body.t-rail .hero-type h1 {
+  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+}
+
+/* раскрывающиеся строки: услуги и мастера */
+.service-folds,
+.master-folds {
+  border-top: 1px solid var(--line);
+}
+
+.service-folds {
+  max-width: 46rem;
+}
+
+.fold {
+  border-bottom: 1px solid var(--line);
+}
+
+.fold summary {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  min-height: 56px;
+  padding: 14px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.fold summary::-webkit-details-marker {
+  display: none;
+}
+
+.fold summary::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.fold[open] summary::after {
+  content: "–";
+}
+
+.fold summary i {
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+}
+
+.fold-title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(20px, 2.2vw, 28px);
+}
+
+.fold-role {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.service-fold > p {
+  margin: 0 0 20px;
+  max-width: 44rem;
+  color: var(--ink-soft);
+}
+
+.master-fold .master-photo {
+  width: min(240px, 62%);
+  margin: 0 0 22px;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-md);
+}
+
+.team-stack {
+  margin-bottom: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--line);
+}
+
+.team-photos {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.team-photos img {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  height: 116px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+/* переходы между панелями: работают и без скрипта */
+.panel-move {
+  display: none;
+  gap: 22px;
+  align-items: center;
+  width: 100%;
+  max-width: var(--container);
+  margin: 32px auto 0;
+  padding: 0 var(--pad);
+}
+
+.panel-move a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.panel-move svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (min-width: 1001px) {
+  body.t-rail {
+    padding-left: var(--rail-w);
+  }
+
+  body.t-rail header.rail {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    width: var(--rail-w);
+    gap: 26px;
+    padding: 26px 24px;
+    border-right: 1px solid var(--line);
+    border-bottom: none;
+    overflow-y: auto;
+  }
+
+  body.t-rail header.rail .logo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  body.t-rail .rail-nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 2px;
+  }
+
+  body.t-rail .rail-nav a {
+    position: relative;
+    min-height: 40px;
+    padding: 6px 0 6px 24px;
+    border: none;
+    border-radius: 0;
+    background: none;
+  }
+
+  body.t-rail .rail-nav a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    margin-top: -4.5px;
+    border-radius: 50%;
+    background: var(--line);
+  }
+
+  body.t-rail .rail-nav a[aria-current="true"]::before {
+    background: var(--accent);
+  }
+
+  body.t-rail .rail-foot {
+    margin-top: auto;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  body.t-rail .panel-move {
+    display: flex;
+  }
+
+  body.t-rail .rail-flow {
+    display: flex;
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+  }
+
+  body.t-rail .rail-flow > main {
+    display: flex;
+    flex: 0 0 auto;
+  }
+
+  body.t-rail .rail-flow > main > section,
+  body.t-rail .rail-flow > footer {
+    flex: 0 0 auto;
+    width: calc(100vw - var(--rail-w));
+    height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-snap-align: start;
+    padding-block: clamp(18px, 2.2vw, 36px);
+  }
+
+  body.t-rail .rail-flow > main > section:not(.hero),
+  body.t-rail .rail-flow > footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* центрирование по вертикали не должно сжимать контейнер по ширине */
+  body.t-rail .rail-flow > main > section > .container,
+  body.t-rail .rail-flow > footer > .container {
+    width: 100%;
+  }
+
+  /* переходы держатся у нижнего края панели, даже если она прокручивается */
+  body.t-rail .panel-move {
+    position: sticky;
+    bottom: 0;
+    margin-top: 20px;
+    padding-top: 12px;
+    padding-bottom: 4px;
+    background: var(--bg);
+  }
+
+  body.t-rail .masters > .panel-move,
+  body.t-rail .gallery > .panel-move {
+    background: var(--bg-soft);
+  }
+
+  body.t-rail .hero-type h1 {
+    font-size: clamp(2.2rem, 3.4vw, 3.3rem);
+  }
+
+  body.t-rail .hero-type .hero-content {
+    padding-block: 16px;
+  }
+
+  body.t-rail .hero-facts {
+    margin-top: 30px;
+  }
+
+  body.t-rail .about-content h2 {
+    margin-bottom: 14px;
+  }
+
+  body.t-rail .advantages {
+    gap: 18px 30px;
+  }
+
+  body.t-rail .services-head {
+    margin-bottom: 28px;
+  }
+
+  body.t-rail .masters-head,
+  body.t-rail .gallery-head {
+    margin-bottom: 22px;
+  }
+
+  body.t-rail .rail-flow > main > .hero-type {
+    align-content: center;
+  }
+
+  /* галерея едет тем же жестом: две полосы фото уходят вправо */
+  body.t-rail .rail-flow > main > section.gallery {
+    width: auto;
+    min-width: calc(100vw - var(--rail-w));
+  }
+
+  body.t-rail .gallery > .container {
+    max-width: none;
+  }
+
+  body.t-rail .gallery-grid {
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: clamp(190px, 19vw, 290px);
+    grid-auto-rows: auto;
+    height: min(58vh, 500px);
+  }
+
+  body.t-rail .gallery-grid .gitem.tall {
+    grid-row: auto;
+  }
+
+  body.t-rail .gallery > .panel-move {
+    margin-left: 0;
+  }
+
+  body.t-rail .about-grid {
+    align-items: center;
+  }
+
+  body.t-rail .about-visual {
+    aspect-ratio: 1/1;
+  }
+
+  body.t-rail .masters > .container {
+    display: grid;
+    grid-template-columns: minmax(240px, 26%) minmax(360px, 1fr);
+    column-gap: clamp(24px, 3vw, 56px);
+    align-items: start;
+  }
+
+  body.t-rail .masters-head {
+    grid-column: 1 / -1;
+  }
+
+  body.t-rail .team-stack {
+    grid-column: 1;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  body.t-rail .master-folds {
+    grid-column: 2;
+  }
+
+  body.t-rail .contacts-grid {
+    max-width: none;
+    display: grid;
+    grid-template-columns: minmax(320px, 46%) minmax(320px, 1fr);
+    column-gap: clamp(24px, 3vw, 56px);
+    align-items: start;
+  }
+
+  body.t-rail .contacts-grid > .map-embed {
+    margin-top: 0;
+    height: min(56vh, 470px);
+  }
+}

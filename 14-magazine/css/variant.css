@@ -1,0 +1,346 @@
+body.t-magazine {
+  background: var(--surface);
+}
+
+body.t-magazine header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 212px;
+  z-index: 90;
+  padding: 30px 26px;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 0;
+  border-right: 1px solid var(--line);
+}
+
+body.t-magazine header .nav-wrap {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 26px;
+  height: 100%;
+  max-width: none;
+  padding: 0;
+}
+
+body.t-magazine header .logo {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 25px;
+}
+
+body.t-magazine header .logo-img {
+  height: 48px;
+}
+
+body.t-magazine header .head-actions {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: auto;
+}
+
+body.t-magazine header .head-phone {
+  align-items: flex-start;
+}
+
+body.t-magazine nav.main-nav {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid var(--ink);
+}
+
+body.t-magazine nav.main-nav a {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+body.t-magazine nav.main-nav a[aria-current] {
+  color: var(--accent);
+}
+
+body.t-magazine nav.main-nav a[aria-current]::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  margin-right: 8px;
+  vertical-align: 3px;
+  border-top: 1px solid var(--accent);
+}
+
+body.t-magazine main {
+  max-width: min(1040px, calc(100vw - 300px));
+  margin: 0 auto 0 252px;
+}
+
+body.t-magazine main > section,
+body.t-magazine .closing > .contacts {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 148px;
+  column-gap: 24px;
+  padding: clamp(38px, 5.5vh, 76px) 0;
+  border-top: 1px solid var(--line);
+  background: transparent;
+}
+
+body.t-magazine .hero {
+  border-top: 0;
+  min-height: 0;
+}
+
+body.t-magazine .container {
+  max-width: none;
+  padding: 0;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+body.t-magazine .hero-content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+body.t-magazine .rh {
+  grid-column: 2;
+  grid-row: 1;
+  position: sticky;
+  top: 26px;
+  align-self: start;
+  margin: 0;
+  padding-top: 6px;
+  border-top: 1px solid var(--ink);
+  text-align: right;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+body.t-magazine .rh b {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+
+body.t-magazine main .eyebrow {
+  display: none;
+}
+
+body.t-magazine h2 {
+  font-size: clamp(2rem, 3.4vw, 2.9rem);
+  max-width: 22ch;
+}
+
+body.t-magazine .hero-content {
+  max-width: none;
+  padding: 0 0 26px;
+}
+
+body.t-magazine .hero-content h1 {
+  font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+  text-align: center;
+  margin: 0 auto 22px;
+  max-width: 26ch;
+}
+
+body.t-magazine .hero-content .lede {
+  columns: 2;
+  column-gap: 36px;
+  max-width: none;
+  margin-bottom: 26px;
+}
+
+body.t-magazine .hero-actions {
+  justify-content: center;
+  margin-top: 8px;
+}
+
+body.t-magazine .hero-facts {
+  justify-content: space-between;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding: 14px 0;
+  margin-top: 30px;
+}
+
+body.t-magazine .hero-fact {
+  border-left: 0;
+  padding: 0;
+}
+
+body.t-magazine .hero-visual {
+  height: min(56vh, 460px);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+body.t-magazine .hero-visual img {
+  height: 100%;
+  object-fit: cover;
+}
+
+body.t-magazine .hero-swatches {
+  display: none;
+}
+
+body.t-magazine .about-grid {
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
+body.t-magazine .about-visual {
+  aspect-ratio: 16/7;
+  border-radius: 0;
+}
+
+body.t-magazine .about-badge {
+  border-radius: 0;
+}
+
+body.t-magazine .about-content {
+  columns: 2;
+  column-gap: 38px;
+}
+
+body.t-magazine .about-content h2,
+body.t-magazine .about-content .advantages {
+  column-span: all;
+}
+
+body.t-magazine .about-content .lede:first-of-type::first-letter {
+  float: left;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 64px;
+  line-height: 0.78;
+  padding: 6px 10px 0 0;
+  color: var(--accent);
+}
+
+body.t-magazine .advantages {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+body.t-magazine .service-list {
+  columns: 2;
+  column-gap: 38px;
+  border-top: 0;
+}
+
+body.t-magazine .service-list li {
+  break-inside: avoid;
+  padding: 14px 0;
+}
+
+body.t-magazine .service-list h3 {
+  font-size: 20px;
+}
+
+body.t-magazine .team-intro {
+  grid-template-columns: 1fr;
+  gap: 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+body.t-magazine .team-intro > .about-visual {
+  aspect-ratio: 16/7 !important;
+  border-radius: 0 !important;
+}
+
+body.t-magazine .team-intro-text p {
+  columns: 2;
+  column-gap: 38px;
+}
+
+body.t-magazine .masters-grid-list {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 26px;
+}
+
+body.t-magazine .master-photo {
+  border-radius: 0;
+  aspect-ratio: 3/4;
+  border: 0;
+  margin-bottom: 10px;
+}
+
+body.t-magazine .master-card h3 {
+  font-size: 19px;
+  margin-bottom: 2px;
+}
+
+body.t-magazine .master-card p {
+  font-size: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 6px;
+}
+
+body.t-magazine .gallery-grid {
+  display: block;
+  columns: 3;
+  column-gap: 16px;
+}
+
+body.t-magazine .gitem {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 0;
+  height: auto;
+}
+
+body.t-magazine .gitem img {
+  height: auto;
+}
+
+body.t-magazine .contacts-grid {
+  max-width: none;
+}
+
+body.t-magazine .contact-info h2 {
+  margin-bottom: 14px;
+}
+
+body.t-magazine .contact-list {
+  columns: 2;
+  column-gap: 38px;
+}
+
+body.t-magazine .contact-item {
+  break-inside: avoid;
+}
+
+body.t-magazine .zapis-note {
+  border-radius: 0;
+  border-left: 3px solid var(--accent);
+}
+
+body.t-magazine .map-embed {
+  border-radius: 0;
+  height: 320px;
+}
+
+body.t-magazine .closing > footer {
+  padding-bottom: 40px;
+}
+
+body.t-magazine .closing .footer-line {
+  border-top: 3px double var(--ink);
+  padding-top: 14px;
+}

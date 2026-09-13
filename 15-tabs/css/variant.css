@@ -1,0 +1,155 @@
+body.t-tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body.t-tabs header {
+  position: static;
+  flex: 0 0 auto;
+  background: var(--surface);
+  backdrop-filter: none;
+  border-bottom: 1px solid var(--line);
+}
+
+body.t-tabs header .nav-wrap {
+  padding: 10px var(--pad);
+}
+
+body.t-tabs header .logo-img {
+  height: 46px;
+}
+
+body.t-tabs nav.main-nav {
+  gap: 8px;
+  align-self: stretch;
+  align-items: stretch;
+}
+
+body.t-tabs nav.main-nav a {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+  color: var(--ink-soft);
+}
+
+body.t-tabs nav.main-nav a:hover {
+  background: var(--bg-soft);
+}
+
+body.t-tabs:has(#about:target) nav.main-nav a[href="#about"],
+body.t-tabs:has(#services:target) nav.main-nav a[href="#services"],
+body.t-tabs:has(#masters:target) nav.main-nav a[href="#masters"],
+body.t-tabs:has(#gallery:target) nav.main-nav a[href="#gallery"],
+body.t-tabs:has(#contacts:target) nav.main-nav a[href="#contacts"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: var(--bg-soft);
+}
+
+body.t-tabs main {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+}
+
+body.t-tabs .closing {
+  display: contents;
+}
+
+body.t-tabs main section {
+  display: none;
+  height: 100%;
+  overflow-y: auto;
+  padding: clamp(22px, 3vh, 40px) 0 60px;
+  border: 0;
+  background: transparent;
+}
+
+body.t-tabs main section:target {
+  display: block;
+}
+
+body.t-tabs main .hero:target,
+body.t-tabs main:not(:has(section:target)) .hero {
+  display: grid;
+  min-height: 100%;
+  padding: 0 0 60px;
+}
+
+body.t-tabs .hero-content {
+  padding: clamp(28px, 4vh, 64px) var(--pad);
+}
+
+body.t-tabs .hero-content h1 {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+}
+
+body.t-tabs .about {
+  padding-top: clamp(22px, 3vh, 40px);
+}
+
+body.t-tabs .about-grid {
+  align-items: center;
+}
+
+body.t-tabs .about-visual {
+  aspect-ratio: 4/3;
+  max-height: 62vh;
+}
+
+body.t-tabs .advantages {
+  gap: 20px 30px;
+}
+
+body.t-tabs .service-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+body.t-tabs .masters-grid-list {
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 14px;
+}
+
+body.t-tabs .master-card h3 {
+  font-size: 16px;
+}
+
+body.t-tabs .master-card p {
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+body.t-tabs .team-intro {
+  margin-bottom: 26px;
+  padding-bottom: 26px;
+}
+
+body.t-tabs .gallery-grid {
+  grid-auto-rows: 170px;
+}
+
+body.t-tabs .map-embed {
+  height: 280px;
+}
+
+body.t-tabs .closing > footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+
+body.t-tabs .closing .footer-line {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 11px;
+}

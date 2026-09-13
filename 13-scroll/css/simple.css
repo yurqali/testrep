@@ -1,0 +1,73 @@
+:root {
+  --bg: #f6f1ea;
+  --ink: #2e2420;
+  --text: #2e2420;
+  --ink-soft: #7a6b5d;
+  --accent: #7c2f2e;
+  --line: #e4d9cb;
+  --sans: "Manrope", "Segoe UI", Tahoma, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding: 1.75rem 1.35rem 3rem;
+}
+
+.wrap {
+  max-width: 45rem;
+  margin: 0 auto;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1.35rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  line-height: 1.25;
+  margin: 0 0 1rem;
+}
+
+h4 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.6rem;
+}
+
+p,
+li {
+  color: var(--ink);
+}
+
+ul,
+ol {
+  padding-left: 1.2rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 0.15rem solid var(--accent);
+  outline-offset: 0.2rem;
+}

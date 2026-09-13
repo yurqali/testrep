@@ -1,0 +1,292 @@
+body.t-scroll {
+  background: var(--bg);
+}
+
+body.t-scroll main > section {
+  min-height: 100vh;
+}
+
+body.t-scroll main > section:not(.hero) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: clamp(20px, 3vh, 44px);
+}
+
+body.t-scroll .about-content .lede {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+body.t-scroll .about,
+body.t-scroll .masters {
+  background: var(--surface);
+}
+
+body.t-scroll .services,
+body.t-scroll .gallery {
+  background: var(--bg-soft);
+}
+
+body.t-scroll main > .closing {
+  position: relative;
+  z-index: 3;
+  background: var(--surface);
+}
+
+body.t-scroll main > section:not(.hero),
+body.t-scroll main > .closing {
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -30px 60px rgba(46, 36, 32, 0.16);
+}
+
+body.t-scroll .hero-content {
+  padding-block: clamp(16px, 2vh, 28px);
+}
+
+body.t-scroll .hero-content h1 {
+  font-size: clamp(1.9rem, 2.7vw, 2.6rem);
+  margin-bottom: 16px;
+}
+
+body.t-scroll .hero-content .lede {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+body.t-scroll .hero-facts {
+  margin-top: 22px;
+}
+
+@media (min-height: 740px) {
+  body.t-scroll main > section:not(.hero) {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+@media (min-height: 840px) {
+  body.t-scroll .hero {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+}
+
+body.t-scroll .about-visual {
+  aspect-ratio: 4/3;
+  max-height: calc(100vh - 240px);
+}
+
+body.t-scroll .about-grid {
+  align-items: center;
+}
+
+body.t-scroll .advantages {
+  margin-top: 18px;
+  gap: 14px 30px;
+}
+
+body.t-scroll .service-list {
+  columns: 2;
+  column-gap: 40px;
+}
+
+body.t-scroll .service-list li {
+  break-inside: avoid;
+  padding: 11px 0;
+}
+
+body.t-scroll .team-intro {
+  margin-bottom: 22px;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+body.t-scroll .team-intro > .about-visual {
+  aspect-ratio: 16/9;
+  max-height: 240px;
+}
+
+body.t-scroll .team-intro-text p {
+  columns: 2;
+  column-gap: 34px;
+  font-size: 14px;
+}
+
+body.t-scroll .gallery-grid {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 0;
+  height: min(560px, calc(100vh - 250px));
+  gap: 12px;
+}
+
+body.t-scroll .gallery-grid .gitem.tall {
+  grid-row: auto;
+}
+
+body.t-scroll .eyebrow {
+  display: block;
+}
+
+.progress-path {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 120;
+  background: rgba(228, 217, 203, 0.6);
+}
+
+.progress-path i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+@supports not (animation-timeline: scroll()) {
+  .progress-path {
+    display: none;
+  }
+}
+
+body.t-scroll .service-list h3 {
+  font-size: 24px;
+}
+
+body.t-scroll .masters-grid-list {
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 14px;
+}
+
+body.t-scroll .master-card h3 {
+  font-size: 16px;
+}
+
+body.t-scroll .master-card p {
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .progress-path i {
+      animation: path-fill linear both;
+      animation-timeline: scroll(root block);
+    }
+
+    @keyframes path-fill {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    body.t-scroll header .nav-wrap {
+      animation: nav-shrink linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 260px;
+    }
+
+    @keyframes nav-shrink {
+      from {
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+      to {
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+    }
+
+    body.t-scroll header .logo-img {
+      animation: logo-shrink linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 260px;
+    }
+
+    @keyframes logo-shrink {
+      from {
+        height: 64px;
+      }
+      to {
+        height: 38px;
+      }
+    }
+  }
+
+  html.js body.t-scroll .hero-content,
+  html.js body.t-scroll .hero-visual,
+  html.js body.t-scroll main > section:not(.hero) > .container {
+    transform: scale(calc(1 - 0.05 * var(--sink, 0))) translateY(calc(-34px * var(--sink, 0)));
+    opacity: calc(1 - 0.75 * var(--sink, 0));
+  }
+
+  html.js body.t-scroll .reveal > .container > * {
+    opacity: 0;
+    transform: translateY(58px);
+    transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  html.js body.t-scroll .reveal.is-in > .container > * {
+    opacity: 1;
+    transform: none;
+  }
+
+  html.js body.t-scroll .reveal > .container > :nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  html.js body.t-scroll .reveal > .container > :nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  html.js body.t-scroll .reveal .eyebrow {
+    opacity: 0;
+    transform: translateX(-44px);
+    transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  html.js body.t-scroll .reveal.is-in .eyebrow {
+    opacity: 1;
+    transform: none;
+  }
+
+  body.t-scroll .hero-content > * {
+    animation: story-rise 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  @keyframes story-rise {
+    from {
+      opacity: 0;
+      transform: translateY(58px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  body.t-scroll .hero-content > :nth-child(2) {
+    animation-delay: 0.07s;
+  }
+
+  body.t-scroll .hero-content > :nth-child(3) {
+    animation-delay: 0.14s;
+  }
+
+  body.t-scroll .hero-content > :nth-child(4) {
+    animation-delay: 0.21s;
+  }
+
+  body.t-scroll .hero-content > :nth-child(5) {
+    animation-delay: 0.28s;
+  }
+}

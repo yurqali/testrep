@@ -1,0 +1,129 @@
+.logo-img,
+header .logo-img,
+.footer-mark .logo-img {
+  height: 28px;
+  width: auto;
+  max-width: 168px;
+  object-fit: contain;
+}
+
+@media (min-width: 1081px) {
+  header .logo-img {
+    height: 32px;
+    max-width: 196px;
+  }
+}
+
+.lead-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.lead-form .field {
+  display: grid;
+  gap: 6px;
+}
+
+.lead-form label {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.lead-form input,
+.lead-form textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.lead-form textarea {
+  min-height: 88px;
+  resize: vertical;
+}
+
+.lead-form .hint {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.lead-form .error {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #8a2f2a;
+}
+
+.lead-form [aria-invalid="true"] {
+  border-color: #8a2f2a;
+}
+
+.lead-form .consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.lead-form .consent input {
+  width: 22px;
+  height: 22px;
+  min-height: 0;
+  margin-top: 3px;
+  flex: 0 0 22px;
+}
+
+.lead-form .consent label {
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+
+.demo-flag {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.quote-list {
+  display: grid;
+  gap: 14px;
+}
+
+.quote-list blockquote {
+  margin: 0;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+
+.quote-list figcaption {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hours-table th,
+.hours-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.price-note {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}

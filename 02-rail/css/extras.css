@@ -38,10 +38,9 @@ footer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 22px;
-  padding: 0;
-  margin-top: 18px;
-  min-height: 44px;
+  gap: 10px 22px;
+  padding-top: 16px;
+  margin-top: 22px;
   border-top: 1px solid var(--line);
   font-size: 12px;
   color: var(--ink-faint);
@@ -73,31 +72,6 @@ footer {
   margin-left: auto;
   color: var(--ink-soft);
   cursor: default;
-}
-
-body.t-classic .contacts-grid {
-  max-width: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px 48px;
-  align-items: start;
-}
-
-body.t-classic .contact-form-col h2,
-body.t-classic .contact-place h2 {
-  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-}
-
-body.t-classic .services-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px 24px;
-  flex-wrap: wrap;
-}
-
-body.t-classic .services-head .price-note {
-  margin: 0;
 }
 
 html:not(.js) .masters-nav,
@@ -574,6 +548,24 @@ body.t-rail .hero-type h1 {
   max-width: 46rem;
 }
 
+.services-split {
+  display: grid;
+  grid-template-columns: minmax(240px, 36rem) minmax(200px, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+
+.services-split .service-folds {
+  max-width: none;
+}
+
+.services-split .about-visual {
+  margin: 0;
+  max-width: min(420px, 100%);
+  width: 100%;
+  justify-self: center;
+}
+
 .fold {
   border-bottom: 1px solid var(--line);
 }
@@ -700,6 +692,7 @@ body.t-rail .hero-type h1 {
     bottom: 0;
     z-index: 100;
     width: var(--rail-w);
+    justify-content: center;
     gap: 26px;
     padding: 26px 24px;
     border-right: 1px solid var(--line);
@@ -745,7 +738,7 @@ body.t-rail .hero-type h1 {
   }
 
   body.t-rail .rail-foot {
-    margin-top: auto;
+    margin-top: 0;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -977,13 +970,4 @@ body.t-scroll .masters-grid-list {
 }
 body.t-tabs .service-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-body.t-classic .gallery-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: auto;
-}
-
-body.t-classic .gallery-grid .gitem {
-  aspect-ratio: 4 / 3;
 }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Демо-приёмник заявки · Улыбка</title>
+  <meta name="theme-color" content="#7C2F2E">
+  <link rel="icon" href="../logos/favicon.ico">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/simple.css">
+</head>
+<body>
+  <main class="wrap">
+    <p><a class="back" href="index.html">← На главную</a></p>
+    <h1>Демо-приёмник заявки</h1>
+    <p>Это учебный макет визитки «Улыбка». Заявка никуда не ушла на сервер и не станет обращением в живую точку.</p>
+    <p>Если в адресе страницы видны поля — браузер перенёс их из формы, без отправки на сервер.</p>
+    <div id="payload"></div>
+    <noscript><p>Без скрипта поля всё равно видны в адресной строке — это и есть демо-доставка.</p></noscript>
+  </main>
+  <script>
+    window.addEventListener("message", function (e) {
+      var data = e.data;
+      if (!data || data.type !== "ff-theme" || !data.vars) return;
+      var root = document.documentElement;
+      Object.keys(data.vars).forEach(function (name) {
+        root.style.setProperty(name, data.vars[name]);
+      });
+    });
+    var p = new URLSearchParams(location.search);
+    var box = document.getElementById("payload");
+    if (p.toString() && box) {
+      var dl = document.createElement("dl");
+      ["name","phone","message","consent"].forEach(function (k) {
+        if (!p.has(k)) return;
+        var dt = document.createElement("dt"); dt.textContent = k;
+        var dd = document.createElement("dd"); dd.textContent = p.get(k);
+        dl.appendChild(dt); dl.appendChild(dd);
+      });
+      box.appendChild(dl);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+body.t-chapters {
+  scroll-snap-type: y mandatory;
+}
+
+body.t-chapters header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: linear-gradient(180deg, rgba(46, 36, 32, 0.5), rgba(46, 36, 32, 0));
+  border-bottom: 0;
+  backdrop-filter: none;
+}
+
+body.t-chapters header .logo,
+body.t-chapters header .head-phone {
+  color: var(--accent-ink);
+}
+
+body.t-chapters header .nav-wrap {
+  max-width: none;
+  padding-left: clamp(200px, 18vw, 280px);
+}
+
+body.t-chapters header nav.main-nav a {
+  color: rgba(255, 246, 241, 0.86);
+}
+
+body.t-chapters header .head-phone span,
+body.t-chapters header .logo-text small {
+  color: rgba(255, 246, 241, 0.68);
+}
+
+body.t-chapters main > section,
+body.t-chapters main > .closing {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+  border: 0;
+  background: var(--ink);
+  scroll-snap-align: start;
+}
+
+body.t-chapters .sv {
+  position: absolute;
+  inset: 0;
+}
+
+body.t-chapters .sv img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+body.t-chapters .sv::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(46, 36, 32, 0.62), rgba(46, 36, 32, 0.12) 58%, rgba(46, 36, 32, 0.42));
+}
+
+body.t-chapters main > section > .container,
+body.t-chapters .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 790px;
+  width: auto;
+  margin: 0 0 clamp(40px, 7vh, 88px) clamp(28px, 5vw, 88px);
+  padding: clamp(24px, 2.6vw, 40px);
+  background: rgba(255, 254, 252, 0.94);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  max-height: 74vh;
+  overflow-y: auto;
+}
+
+body.t-chapters .hero {
+  align-items: flex-end;
+}
+
+body.t-chapters .hero-content {
+  margin-left: auto;
+  margin-right: clamp(64px, 9vw, 140px);
+}
+
+body.t-chapters .hero-content h1 {
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  margin-bottom: 18px;
+}
+
+body.t-chapters .hero-facts {
+  margin-top: 28px;
+}
+
+body.t-chapters .about-visual {
+  display: none;
+}
+
+body.t-chapters .about-grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+body.t-chapters .about > .container {
+  max-width: 1180px;
+}
+
+body.t-chapters .about-content {
+  columns: 2;
+  column-gap: 36px;
+}
+
+body.t-chapters .about-content h2,
+body.t-chapters .about-content .advantages {
+  column-span: all;
+}
+
+body.t-chapters .about-content h2 {
+  margin-bottom: 14px;
+}
+
+body.t-chapters .about-content .lede {
+  font-size: 15px;
+}
+
+body.t-chapters .advantages {
+  gap: 16px 26px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+body.t-chapters .service-list {
+  columns: 2;
+  column-gap: 34px;
+}
+
+body.t-chapters .service-list li {
+  break-inside: avoid;
+  padding: 12px 0;
+}
+
+body.t-chapters .service-list h3 {
+  font-size: 19px;
+}
+
+body.t-chapters .masters > .container {
+  max-width: 1180px;
+}
+
+body.t-chapters .team-intro {
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 26px;
+  margin-bottom: 24px;
+  padding-bottom: 22px;
+}
+
+body.t-chapters .team-intro .about-visual {
+  display: block;
+}
+
+body.t-chapters .team-intro-text p {
+  font-size: 14px;
+}
+
+body.t-chapters .masters-hscroll {
+  overflow: visible;
+  gap: 12px;
+  padding: 0;
+}
+
+body.t-chapters .masters-hscroll .master-card {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+body.t-chapters .masters-hscroll .master-photo {
+  margin-bottom: 10px;
+}
+
+body.t-chapters .masters-hscroll h3 {
+  font-size: 15px;
+}
+
+body.t-chapters .masters-hscroll p {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+body.t-chapters .gallery > .container {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 104px clamp(28px, 5vw, 88px) clamp(28px, 4vh, 56px);
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  max-height: none;
+  overflow: visible;
+}
+
+body.t-chapters .gallery-head {
+  margin-bottom: 18px;
+}
+
+body.t-chapters .gallery-head .eyebrow,
+body.t-chapters .gallery-head h2 {
+  color: var(--accent-ink);
+}
+
+body.t-chapters .gallery-grid {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 0;
+  height: calc(100vh - 104px - clamp(28px, 4vh, 56px) - 74px);
+  gap: 12px;
+}
+
+body.t-chapters .gallery-grid .gitem.tall {
+  grid-row: auto;
+}
+
+body.t-chapters .contact-info {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  column-gap: 30px;
+}
+
+body.t-chapters .contact-info > * {
+  grid-column: 1;
+}
+
+body.t-chapters .contact-info > .map-embed {
+  grid-column: 2;
+  grid-row: 1 / span 5;
+  height: 100%;
+  min-height: 250px;
+  margin-top: 0;
+}
+
+body.t-chapters .closing > .contacts {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+body.t-chapters .closing > .contacts > .container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: auto;
+  margin: 0 0 0 clamp(28px, 5vw, 88px);
+  padding: clamp(24px, 2.6vw, 40px) clamp(24px, 2.6vw, 40px) 12px;
+  background: rgba(255, 254, 252, 0.94);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: var(--shadow);
+}
+
+body.t-chapters .closing > footer {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 clamp(40px, 7vh, 88px) clamp(28px, 5vw, 88px);
+  max-width: 900px;
+  background: rgba(255, 254, 252, 0.94);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+body.t-chapters .closing > footer > .container {
+  max-width: none;
+  padding: 0 clamp(24px, 2.6vw, 40px) 18px;
+}
+
+body.t-chapters .closing .footer-line {
+  margin-top: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    body.t-chapters main > section > .container,
+    body.t-chapters .closing > .contacts > .container,
+    body.t-chapters .closing > footer,
+    body.t-chapters .hero-content {
+      animation: chapter-in linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 90%;
+    }
+
+    @keyframes chapter-in {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  }
+}

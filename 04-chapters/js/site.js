@@ -312,7 +312,7 @@
       "wheel",
       function (e) {
         if (e.ctrlKey || !e.deltaY) return;
-        var box = e.target.closest ? e.target.closest(".container, .hero-content") : null;
+        var box = e.target.closest ? e.target.closest(".container, .hero-content, .lead-form") : null;
         if (box && box.scrollHeight - box.clientHeight > 2) {
           var atTop = box.scrollTop <= 0;
           var atEnd = box.scrollTop + box.clientHeight >= box.scrollHeight - 2;

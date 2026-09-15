@@ -1,0 +1,417 @@
+.hero {
+  min-height: 0;
+}
+
+.hero-content {
+  justify-content: flex-start;
+  padding-top: clamp(28px, 4vh, 48px);
+  padding-bottom: clamp(28px, 4vh, 48px);
+}
+
+.hero-facts {
+  margin-top: 28px;
+}
+
+.about-grid {
+  gap: 24px 36px;
+}
+
+.about-visual {
+  aspect-ratio: 4 / 3;
+}
+
+.service-tile p {
+  min-height: 0;
+}
+
+.service-tile .price {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.service-tile:hover .price {
+  color: var(--accent-ink);
+}
+
+.price-note {
+  margin-top: 14px;
+}
+
+body.t-scroll main > section,
+body.t-scroll .hero {
+  min-height: calc(100vh - var(--head-h, 88px));
+}
+
+body.t-scroll main > section:not(.hero) {
+  justify-content: flex-start;
+  padding-block: clamp(28px, 4vh, 52px);
+}
+
+body.t-spread main > section {
+  min-height: 0;
+}
+
+body.t-spread .hero {
+  min-height: 0;
+}
+
+body.t-spread main > section > .container,
+body.t-spread .closing > .contacts > .container,
+body.t-spread .hero-content {
+  min-height: 0;
+  justify-content: flex-start;
+  padding: clamp(28px, 4vh, 56px) clamp(24px, 4vw, 64px);
+}
+
+body.t-tabs main section {
+  padding: clamp(16px, 2vh, 28px) 0 40px;
+}
+
+body.t-tabs main .hero:target,
+body.t-tabs main:not(:has(section:target)) .hero {
+  padding-bottom: 40px;
+}
+
+body.t-tabs .hero-content {
+  padding: clamp(16px, 2.4vh, 32px) var(--pad);
+}
+
+body.t-tabs .map-embed {
+  height: 220px;
+}
+
+body.t-chapters .hero-content,
+body.t-chapters main > section > .container {
+  max-height: min(82vh, 760px);
+}
+
+body.t-mosaic .hero-visual {
+  min-height: 280px;
+}
+
+body.t-rail .hero-type {
+  min-height: 0;
+}
+
+body.t-rail .hero-type .hero-content {
+  justify-content: flex-start;
+  padding-block: clamp(20px, 3vh, 40px);
+}
+
+.master-card .master-bio,
+.master-fold .master-bio {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 8px 0 0;
+}
+
+.master-fold .master-bio {
+  max-width: 44rem;
+  margin: 0 0 20px;
+  font-size: 14px;
+}
+
+.reviews {
+  padding-block: clamp(28px, 4vh, 52px);
+}
+
+.quote-list {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.quote-list figure {
+  margin: 0;
+}
+
+body.t-tabs .master-card .master-bio,
+body.t-mosaic .master-card .master-bio {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+body.t-mosaic .reviews {
+  grid-column: span 12;
+}
+
+body.t-mosaic .reviews > .container {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: clamp(22px, 2.2vw, 34px);
+}
+
+body.t-mosaic .quote-list blockquote {
+  background: var(--bg);
+}
+
+body.t-chapters .quote-list {
+  grid-template-columns: 1fr;
+}
+
+body.t-tabs:has(#reviews:target) nav.main-nav a[href="#reviews"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: var(--bg-soft);
+}
+
+.mob-stub {
+  display: none;
+}
+
+.team-intro:not(:has(img)) {
+  grid-template-columns: 1fr;
+}
+
+body.t-mosaic .closing {
+  grid-column: span 12;
+}
+
+body.t-mosaic .masters-grid-list,
+body.t-tabs .masters-grid-list,
+body.t-scroll .masters-grid-list,
+body.t-magazine .masters-grid-list {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+body.t-mosaic .service-grid,
+body.t-tabs .service-grid {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+body.t-mosaic .gallery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+body.t-chapters .gallery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-rows: none;
+  grid-auto-rows: minmax(110px, 16vh);
+  height: auto;
+}
+
+body.t-chapters .closing > .contacts > .container {
+  max-height: 74vh;
+  overflow-y: auto;
+}
+
+body.t-chapters .contact-info:not(:has(.map-embed)) {
+  grid-template-columns: 1fr;
+}
+
+body.t-chapters .contact-info:not(:has(.map-embed)) > .map-embed {
+  display: none;
+}
+
+body.t-rail .contacts-grid:not(:has(.map-embed)) {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 1080px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  body.t-magazine header {
+    position: sticky;
+    top: 0;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    padding: 10px 16px;
+    background: var(--surface);
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  body.t-magazine header .nav-wrap {
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    gap: 12px;
+  }
+
+  body.t-magazine header .head-actions {
+    flex-direction: row;
+    margin-top: 0;
+    align-items: center;
+  }
+
+  body.t-magazine main {
+    width: auto;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0 16px 28px;
+  }
+
+  body.t-magazine main > section,
+  body.t-magazine .closing > .contacts {
+    grid-template-columns: 1fr;
+  }
+
+  body.t-magazine .rh {
+    display: none;
+  }
+
+  body.t-magazine .hero-content .lede,
+  body.t-magazine .about-content,
+  body.t-magazine .service-list,
+  body.t-magazine .contact-list,
+  body.t-magazine .team-intro-text p {
+    columns: 1;
+  }
+
+  body.t-tabs nav.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    width: 100%;
+    order: 5;
+  }
+
+  body.t-tabs header .nav-wrap {
+    flex-wrap: wrap;
+  }
+
+  body.t-tabs .burger {
+    display: none;
+  }
+
+  body.t-tabs nav.main-nav a {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 900px) {
+  body.t-spread header {
+    left: 0;
+  }
+
+  body.t-spread main > section,
+  body.t-spread .closing {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  body.t-spread .sv,
+  body.t-spread .closing > .sv {
+    position: relative;
+    height: 42vh;
+    min-height: 200px;
+    width: 100%;
+  }
+
+  body.t-spread main > section > .container,
+  body.t-spread .hero-content,
+  body.t-spread .closing > .contacts > .container {
+    min-height: 0;
+    padding: 28px 20px;
+  }
+
+  body.t-spread .closing > .contacts,
+  body.t-spread .closing > footer {
+    width: 100%;
+  }
+
+  body.t-mosaic main,
+  body.t-mosaic .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body.t-mosaic .hero,
+  body.t-mosaic .about,
+  body.t-mosaic .services,
+  body.t-mosaic .masters,
+  body.t-mosaic .gallery,
+  body.t-mosaic .reviews,
+  body.t-mosaic .closing {
+    width: 100%;
+  }
+
+  body.t-mosaic .about-grid,
+  body.t-mosaic .team-intro {
+    grid-template-columns: 1fr;
+  }
+
+  body.t-chapters .about-content,
+  body.t-chapters .service-list {
+    columns: 1;
+  }
+
+  body.t-chapters main > section,
+  body.t-chapters main > .closing {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 640px) {
+  body.t-mosaic .gallery-grid,
+  body.t-tabs .service-grid,
+  body.t-magazine .masters-grid-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body.t-mosaic .service-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .mob-stub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    padding: 32px 24px;
+    background: var(--bg);
+    color: var(--ink);
+    overflow: auto;
+  }
+
+  .mob-stub-kicker {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .mob-stub h2 {
+    margin: 0 0 14px;
+    max-width: 14ch;
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
+  }
+
+  .mob-stub p {
+    margin: 0 0 24px;
+    max-width: 34ch;
+    color: var(--ink-soft);
+    font-size: 16px;
+  }
+
+  body > *:not(.mob-stub):not(.skip-link) {
+    display: none !important;
+  }
+}

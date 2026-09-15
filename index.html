@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fiery Fox – превью макетов</title>
+  <title>Витрина сайтов</title>
+  <link rel="icon" href="logos/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="logos/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="logos/apple-touch-icon.png">
   <link rel="stylesheet" href="preview.css">
 </head>
 <body>
-  <iframe id="view" title="Превью выбранного макета"></iframe>
+  <iframe id="view" title="Превью выбранной визитки"></iframe>
 
   <div class="dock">
     <div class="slot">
-      <button type="button" class="chip" id="variantBtn" aria-expanded="false" aria-controls="variantPop">Classic</button>
+      <button type="button" class="chip" id="variantBtn" aria-expanded="false" aria-controls="variantPop">Выбрать</button>
       <div class="pop" id="variantPop" hidden>
         <div class="variants" id="variants"></div>
       </div>
@@ -26,8 +29,37 @@
         <input class="hue" id="hue" type="range" min="0" max="360" step="1">
         <div class="row">
           <input class="eyedrop" id="drop" type="color">
-          <input class="hex" id="hex" type="text" maxlength="7" spellcheck="false">
+          <input class="hex" id="hex" type="text" maxlength="7" spellcheck="false" aria-label="HEX">
+          <button type="button" class="rand" id="randColors" title="Случайные цвета" aria-label="Случайные цвета фона, текста и акцента">
+            <svg class="rand-cube" viewBox="1.5 1.2 13 13.6" width="24" height="24" aria-hidden="true">
+              <path class="rand-face" data-face="top" fill="#7C2F2E" d="M8 1.4 14.3 4.7 8 8 1.7 4.7Z"/>
+              <path class="rand-face" data-face="left" fill="#F6F1EA" d="M1.7 4.7 8 8v6.6L1.7 11.3Z"/>
+              <path class="rand-face" data-face="right" fill="#2E2420" d="M8 8 14.3 4.7v6.6L8 14.6Z"/>
+              <g class="rand-pips" fill="#fff">
+                <circle cx="8" cy="4.7" r="0.85"/>
+                <circle cx="4.2" cy="7.35" r="0.7"/>
+                <circle cx="4.2" cy="10.15" r="0.7"/>
+                <circle cx="11.15" cy="7.05" r="0.65"/>
+                <circle cx="12.15" cy="9.15" r="0.65"/>
+                <circle cx="10.15" cy="11.05" r="0.65"/>
+              </g>
+            </svg>
+          </button>
         </div>
+      </div>
+    </div>
+    <!-- ff-fonts: start -->
+    <div class="slot">
+      <button type="button" class="chip" id="fontBtn" aria-expanded="false" aria-controls="fontPop" title="Шрифт">Aa</button>
+      <div class="pop" id="fontPop" hidden>
+        <div class="variants" id="fonts"></div>
+      </div>
+    </div>
+    <!-- ff-fonts: end -->
+    <div class="slot">
+      <button type="button" class="help" aria-describedby="helpTip" aria-label="Как пользоваться">?</button>
+      <div class="help-tip" id="helpTip" role="tooltip">
+        В этом меню можно переключать тип сайта, цвета и шрифт. При переключении типа сайта палитра цветов и шрифт сохранятся. При выборе палитры можно кликнуть на цветной кубик (справа внизу) для случайной комбинации цветов.
       </div>
     </div>
   </div>

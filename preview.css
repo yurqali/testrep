@@ -68,8 +68,50 @@ input {
 .chip.is-open,
 .swatch.is-open,
 .chip:hover,
-.swatch:hover {
+.swatch:hover,
+.help:hover,
+.help:focus-visible {
   border-color: var(--shell-accent);
+}
+
+.help {
+  appearance: none;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 1px solid var(--shell-line);
+  border-radius: 50%;
+  background: var(--shell-panel);
+  color: var(--shell-text);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: help;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.help-tip {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 248px;
+  padding: 10px 12px;
+  border: 1px solid var(--shell-line);
+  border-radius: 12px;
+  background: var(--shell-panel);
+  color: var(--shell-text);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.slot:hover .help-tip,
+.slot:focus-within .help-tip {
+  opacity: 1;
+  visibility: visible;
 }
 
 .swatch {
@@ -109,6 +151,9 @@ input {
 
 .variants button {
   appearance: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   width: 100%;
   padding: 7px 10px;
   border: 0;
@@ -118,6 +163,19 @@ input {
   text-align: left;
   font-size: 0.8rem;
   cursor: pointer;
+}
+
+.variants button::before {
+  content: "";
+  flex: 0 0 0.9em;
+  width: 0.9em;
+  font-size: 0.85em;
+  line-height: 1;
+  color: var(--shell-accent);
+}
+
+.variants button.is-on::before {
+  content: "✓";
 }
 
 .variants button.is-on,
@@ -197,8 +255,9 @@ input {
 
 .row {
   display: grid;
-  grid-template-columns: 36px 1fr;
+  grid-template-columns: 36px minmax(0, 1fr) 30px;
   gap: 6px;
+  align-items: center;
 }
 
 .eyedrop {
@@ -211,13 +270,48 @@ input {
 }
 
 .hex {
+  min-width: 0;
   height: 30px;
-  padding: 0 8px;
+  padding: 0 6px;
   border: 1px solid var(--shell-line);
   border-radius: 8px;
   background: #2a2420;
   color: var(--shell-text);
   text-transform: uppercase;
   font-family: Consolas, "Courier New", monospace;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
+}
+
+.rand {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--shell-line);
+  border-radius: 8px;
+  background: #2a2420;
+  color: var(--shell-text);
+  cursor: pointer;
+}
+
+.rand-cube {
+  display: block;
+  overflow: visible;
+}
+
+.rand-pips {
+  mix-blend-mode: difference;
+}
+
+.rand:hover,
+.rand:focus-visible {
+  border-color: var(--shell-accent);
+}
+
+.rand:hover .rand-cube,
+.rand:focus-visible .rand-cube {
+  transform: rotate(-8deg);
 }

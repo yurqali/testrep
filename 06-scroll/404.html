@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>404 – Страницы нет · Искорка</title>
+  <meta name="theme-color" content="#7C2F2E">
+  <link rel="icon" href="../logos/favicon.ico">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/simple.css">
+</head>
+<body>
+  <main class="wrap">
+    <p><a class="back" href="index.html">← На главную</a></p>
+    <h1>404 – Страницы нет</h1>
+    <p>Такой страницы на сайте «Искорка» нет.</p>
+    <p><a href="index.html">Вернуться на главную</a></p>
+  </main>
+  <script>
+    window.addEventListener("message", function (e) {
+      var data = e.data;
+      if (!data || data.type !== "ff-theme" || !data.vars) return;
+      var root = document.documentElement;
+      Object.keys(data.vars).forEach(function (name) {
+        root.style.setProperty(name, data.vars[name]);
+      });
+    });
+  </script>
+</body>
+</html>

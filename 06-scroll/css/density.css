@@ -373,7 +373,7 @@ body.t-rail .contacts-grid:not(:has(.map-embed)) {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 720px), (orientation: landscape) and (max-height: 560px) and (pointer: coarse) {
   .mob-stub {
     display: flex;
     flex-direction: column;
